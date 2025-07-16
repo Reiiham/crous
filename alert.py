@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
 chat_id = os.getenv("TELEGRAM_CHAT_ID")
-city_filter = os.getenv("CITY_FILTER")
+city_filter = os.getenv("CITY_NAME")
 
 url = "https://trouverunlogement.lescrous.fr/api/fr/search/41"
 
