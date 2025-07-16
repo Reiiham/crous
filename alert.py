@@ -27,8 +27,8 @@ def get_available_rooms():
         for item in items:
             entity = item["residence"].get("entity", {})
             entity_name = entity.get("name")
-
-            if entity_name.lower() != city_filter.lower():
+            #print(f"Found city in result: {entity_name}")
+            if city_filter.strip().lower() not in entity_name.strip().lower():
                 continue  # Skip cities you don't want
 
             label = item.get("label", "No label")
