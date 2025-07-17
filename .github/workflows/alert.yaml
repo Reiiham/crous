@@ -8,6 +8,7 @@ on:
 jobs:
   check_rooms:
     runs-on: ubuntu-latest
+    timeout-minutes: 5  # auto-kills the job if it runs longer than 5 mins
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -28,4 +29,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CITY_FILTER: ${{ secrets.CITY_NAME }}
         run: |
-          python alert.py
+            echo "Starting script at $(date)"
+            python alert.py
+            echo "Script completed at $(date)"
